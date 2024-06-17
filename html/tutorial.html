@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tutorial Flappy Teachers</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Eigen CSS-->
+    <link rel="stylesheet" href="../css/tutorial.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Flappy Teachers</h1>
+    </header>
+
+    <div class="text-center">
+      <img
+        src="../assets/imgs/character_1_happy.png"
+        alt="teacher"
+        class="center"
+        style="width: 10rem"
+      />
+      <img
+        src="../assets/imgs/character_2_happy.png"
+        alt="teacher"
+        class="center"
+        style="width: 10rem"
+      />
+      <img
+        src="../assets/imgs/character_3_happy.png"
+        alt="teacher"
+        class="center"
+        style="width: 10rem"
+      />
+    </div>
+
+    <div class="container">
+      <div class="workshop-wrapper">
+        <a href="../index">Speel het spel hier</a>
+        <div class="content-block">
+          <p>
+            We gaan een eigen versie van flappy bird maken<br />
+            We gaan kunnen kiezen uit verschillende characters en proberen een
+            zo hoog mogelijke scoren te halen
+          </p>
+
+          <img
+            class="screenshot"
+            src="../assets/imgs/tutorial_example.gif"
+            alt="Screenshot Soundboard"
+          />
+
+          <p>Daarvoor hebben we drie codetalen nodig</p>
+          <ul>
+            <li>
+              <span class="highlight">HTML </span>
+            </li>
+            <li>
+              <span class="highlight">CSS </span>
+            </li>
+            <li>
+              <span class="highlight">JavaScript</span>
+            </li>
+          </ul>
+
+          <p>
+            Geen paniek, we houden de code eenvoudig, maar maken wel iets
+            superinteractief!
+          </p>
+          <div class="content-block">
+            <div class="container">
+              <article id="step-1">
+                <h2 class="h3">STAP 1 - MAPPEN EN BESTANDEN</h2>
+                <div class="htmluitleg">
+                  We hebben een code-editor nodig. In de workshop gebruiken we
+                  <a target="_blank" href="https://code.visualstudio.com/"
+                    >Visual Studio Code.</a
+                  >
+                </div>
+                <div class="htmluitleg">
+                  Dit is de mappenstructuur en de nodige bestanden die je gaat
+                  nodig hebben voor het project vloeiend te laten verlopen
+                  <br />
+                  De foto's zijn verkrijgbaar op onze github voor de mensen die
+                  willen:
+                  <a
+                    href="https://github.com/pgmgent-atwork2/project-1-workshop-start-2-code-daria-arno/tree/main/assets/imgs"
+                    >Github</a
+                  >. <br />
+                  Je kan altijd eigen images gebruiken maar zorg ervoor dat de
+                  namen hetzelfde zijn als in de structuur hieronder.
+                </div>
+                <ul>
+                  <li>
+                    <span class="highlight">index.html</span>
+                  </li>
+                  <li>
+                    <span class="highlight">js (folder)</span>
+                    <ul>
+                      <li>
+                        <span class="highlight">main.js</span>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="highlight">css (folder)</span>
+                    <ul>
+                      <li>
+                        <span class="highlight">main.css</span>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="highlight">assets (folder)</span>
+                    <ul>
+                      <li>
+                        <span class="highlight">imgs (folder)</span>
+                        <ul>
+                          <li>
+                            <span class="highlight">bg.png</span>
+                          </li>
+                          <li>
+                            <span class="highlight">bottomPillar.png</span>
+                          </li>
+                          <li>
+                            <span class="highlight">character_1_happy.png</span>
+                          </li>
+                          <li>
+                            <span class="highlight">character_1_sad.png</span>
+                          </li>
+                          <li>
+                            <span class="highlight">character_2_happy.png</span>
+                          </li>
+                          <li>
+                            <span class="highlight">character_2_sad.png</span>
+                          </li>
+                          <li>
+                            <span class="highlight">character_3_happy.png</span>
+                          </li>
+                          <li>
+                            <span class="highlight">character_3_sad.png</span>
+                          </li>
+                          <li>
+                            <span class="highlight">topPillar.png</span>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="highlight">sounds (folder)</span>
+                        <ul>
+                          <li>
+                            <span class="highlight">coin.mp3</span>
+                          </li>
+                          <li>
+                            <span class="highlight">game-over.mp3</span>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li><span class="highlight">GREAT SUCCESS</span></li>
+                </ul>
+              </article>
+              <article id="step-2">
+                <h2 class="h3">STAP 2 - HTML &amp; CSS</h2>
+                <div class="htmluitleg">
+                  Tijd om te coderen, zodat we meer te zien krijgen dan een
+                  witte webpagina!
+                </div>
+                <ul>
+                  <li style="margin-bottom: 1rem">
+                    <strong>2.1</strong> Begin door je index.html de startcode
+                    te geven. Je doet dit door "!" te typen en dan enter te
+                    drukken. Of je kopieert de onderstaande code. <br />
+                    <script
+                      async
+                      src="//jsfiddle.net/testetsths/sqprwztf/embed/html/"
+                    ></script>
+                    Dit is een basis-structuur waarin we verder werken.
+                  </li>
+
+                  <li style="margin-bottom: 1rem">
+                    <strong>2.2</strong> Voeg nu een canvas toe, we hebben dit
+                    nodig om grafisch te kunnen tekenen op de webpagina. <br />
+                    Zet dit tussen de <strong>tussen de body tags</strong><br />
+                    <script
+                      async
+                      src="//jsfiddle.net/testetsths/e91nv4ho/5/embed/html/"
+                    ></script>
+                  </li>
+
+                  <li style="margin-bottom: 1rem">
+                    <strong>2.3</strong> Voeg audio tags toe met het juiste pad
+                    naar je mp3 files die je wil gebruiken. <br />
+                    <script
+                      async
+                      src="//jsfiddle.net/testetsths/mLqg3ka4/embed/html/"
+                    ></script>
+                  </li>
+
+                  <li style="margin-bottom: 1rem">
+                    <strong>2.4</strong> Als laatste, voeg de selectie knoppen
+                    toe voor de karakters onder de canvas.<br />
+                    <script
+                      async
+                      src="//jsfiddle.net/testetsths/werc7bm6/4/embed/html/"
+                    ></script>
+                  </li>
+
+                  <li style="margin-bottom: 1rem">
+                    <strong>2.5</strong> Kopieer onderstaande code in jouw
+                    <code>main.css</code>-bestand. Bewaar vervolgens dat
+                    bestand.<br />
+                    <script
+                      async
+                      src="//jsfiddle.net/arnoboenders/tyhrc6zg/8/embed/css/"
+                    ></script>
+                    Dit bevat alvast een aantal basisstijlen die we later zullen
+                    nodig hebben voor de look &amp; feel van onze app.
+                  </li>
+
+                  <li style="margin-bottom: 1rem">
+                    <strong>2.6</strong> Bekijk het resultaat in de browser (de
+                    url is hoogstwaarschijnlijk:
+                    <a href="http://127.0.0.1:5500/">http://127.0.0.1:5500/</a
+                    > als je met de live server extensie werkt).<br />
+                    Als alles goed is, ziet het er nu zo uit. Een gekleurd vak
+                    met knoppen onder met normaal de juiste foto's / characters
+                    in de knoppen.<br />
+                    <strong style="color: red"
+                      >Als dit niet het geval is controleer dan zeker dat je de
+                      images hebt en ze de juiste naam hebt gegeven.</strong
+                    >
+                    <br />
+                    <script
+                      async
+                      src="//jsfiddle.net/arnoboenders/tyhrc6zg/8/embed/result/"
+                    ></script>
+                  </li>
+                  <li style="margin-bottom: 1rem">
+                    <strong>2.7</strong> Laten we het eens van kleur veranderen.
+                    Hiervoor moeten we de kleurwaarde veranderen. Zoek naar
+                    <code> background-color: cornflowerblue;</code> en verander
+                    <code>cornflowerblue;</code> naar bijvoorbeeld
+                    <code>tomato;</code> De achtergrond is nu tomaatkleurig.<br />
+                    <script
+                      async
+                      src="//jsfiddle.net/arnoboenders/tyhrc6zg/9/embed/result/"
+                    ></script>
+                  </li>
+                </ul>
+              </article>
+              <article id="step-3">
+                <h2 class="h3">STAP 3 - INTERACTIVITEIT MET JAVASCRIPT</h2>
+                <div class="htmluitleg">
+                  <code>hello world</code>
+                </div>
+                <ul>
+                  <li style="margin-bottom: 1rem">
+                    <strong>3.1</strong> Eerst en vooral moeten we de link
+                    leggen naar het JavaScript-bestand.<br />
+                    Voeg deze regel code toe, onderaan net voor de
+                    sluitings-body-tag.<br />
+                    <code
+                      >&lt;script
+                      src=&quot;./js/main.js&quot;&gt;&lt;/script&gt;</code
+                    >
+                  </li>
+
+                  <li style="margin-bottom: 1rem">
+                    <strong>3.2</strong> Ga naar het bestand
+                    <code>main.js</code> en zet er het volgende in:<br />
+                    <script
+                      async
+                      src="//jsfiddle.net/arnoboenders/tyhrc6zg/12/embed/js/"
+                    ></script>
+                    Dit is om alle variabelen te declareren die we gaan nodig
+                    hebben voor de rest van het project
+                  </li>
+
+                  <li style="margin-bottom: 1rem">
+                    <strong>3.3</strong> Nu voegen we een functie toe die de
+                    nodige variabelen waarden gaat geven en ze inladen.
+                    <script
+                      async
+                      src="//jsfiddle.net/arnoboenders/tyhrc6zg/15/embed/js/"
+                    ></script>
+                  </li>
+                  <li style="margin-bottom: 1rem">
+                    <strong>3.4</strong> Vervolgens gaan we de update functie
+                    toevoegen. <br />
+                    Dit is een vrij lange functie. De nodige info staat altijd
+                    bij de code bij voor extra informatie. <br />
+                    Wat deze functie gaat doen is kijken bij elke update dat er
+                    gebeurd (als er op een knop geduwd wordt om te springen) of
+                    het character iet heeft geraakt of niet. <br />
+                    Als dit zo is gaat hij de variabele <code>gameOver</code> op
+                    true zetten.<br />
+                    Als hij niets geraakt heeft dan gaat er een geluid worden
+                    afgespeeld.
+                    <script
+                      async
+                      src="//jsfiddle.net/arnoboenders/tyhrc6zg/17/embed/js/"
+                    ></script>
+                  </li>
+                  <li style="margin-bottom: 1rem">
+                    <strong>3.5</strong> De toren plaatsende functie. <br />
+                    Deze functie gaat de torens plaatsen op een willekeurige
+                    plaats en de juiste afstand van elkaar. <br />
+                    <script
+                      async
+                      src="//jsfiddle.net/testetsths/d7hokb46/embed/js/"
+                    ></script>
+                  </li>
+                  <li style="margin-bottom: 1rem">
+                    <strong>3.6</strong> De volgende functie is om de character
+                    te laten bewegen.<br />
+                    Hier gaan we eerst en vooral de knoppen die gebruikt gaan
+                    worden om te springen bevestigen. <br />
+                    We gaan in deze functie ook de hoogte van het springen
+                    bevestigen met de velocity en de rotatie van het character
+                    toevoegen zodat hij een vallend effect heeft. <br />
+                    Op het einde van de functie zetten we ook een reset zodat je
+                    het spel opnieuw kan starten door een van de gekozen knoppen
+                    in te duwen. De reset zorgt ervoor dat de geluiden worden
+                    herstart en dat het character op de begin positie wordt
+                    geplaatst.
+                    <script
+                      async
+                      src="//jsfiddle.net/arnoboenders/tyhrc6zg/20/embed/js/"
+                    ></script>
+                  </li>
+                  <li style="margin-bottom: 1rem">
+                    <strong>3.7</strong> Dit is de laatste functie. De bedoeling
+                    is om te detecteren wanneer je een pillaar raakt.<br />
+
+                    <script
+                      async
+                      src="//jsfiddle.net/testetsths/e5hrtobz/embed/js/"
+                    ></script>
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>&copy; Daria & Arno <br />2024</p>
+        <br /><br />
+      </footer>
+    </div>
+  </body>
+</html>
